@@ -1,10 +1,25 @@
 // GENERO UNA FUNZIONE CHE MI CREA UNA CARD, DA USARE IN UN CICLO PER STAMPARE I DATI DEI DIPENDENTI
 
-function createCard(){
-    let col = document.querySelector(`col-12`)
+function createCard(photo, name, role){
+    let col = document.getElementById(`test`)
     let card = document.createElement(`div`)
     card.classList.add(`card`)
     col.appendChild(card)
+    let img = document.createElement(`img`)
+    img.src = `../img/${photo}`
+    img.classList.add(`card-img-top`)
+    card.appendChild(img)
+    let card_body = document.createElement(`div`)
+    card_body.classList.add(`card-body`)
+    card.appendChild(card_body)
+    let nome = document.createElement(`h5`)
+    let ruolo = document.createElement(`p`)
+    nome.classList.add(`card-title`)
+    ruolo.classList.add(`card-text`)
+    nome.innerHTML = `${name}`
+    ruolo.innerHTML = `${role}`
+    card_body.appendChild(nome)
+    card_body.appendChild(ruolo)
 }
 
 // GENERO UNA FUNZIONE CHE MI CREA UNA STRINGA, DA USARE IN UN CICLO PER STAMPARE I DATI DEI DIPENDENTI
@@ -22,7 +37,7 @@ let employees = [
     {
         name: "Wayne Bamett",
         role: "Founder & CEO",
-        photo: "wayne-bamett-founder-ceo.jpg"
+        photo: "wayne-barnett-founder-ceo.jpg"
     },
     {
         name: "Angela Caroll",
@@ -53,7 +68,20 @@ let employees = [
 
 console.log(employees)
 
-// CICLO CHE STAMPA SU STRINGA I DATI DEI DIPENDENTI
+// MILESTONE 2: CICLO CHE STAMPA SU STRINGA I DATI DEI DIPENDENTI
+// for(let i=0; i<employees.length; i++){
+//     let name = employees[i].name
+//     let role = employees[i].role
+//     let photo = employees[i].photo
+//     let date = `Nome: ${name} - Ruolo: ${role} - Foto: ${photo}`
+//     createString(date)
+// }
+
+
+// BONUS 1 + BONUS 2: CICLO CHE STAMPA SU CARD I DATI DEI DIPENDENTI
 for(let i=0; i<employees.length; i++){
-    createString(employees[i])
+    let name = employees[i].name
+    let role = employees[i].role
+    let photo = employees[i].photo
+    createCard(photo, name, role)
 }
