@@ -1,3 +1,17 @@
+function createCard(){
+    let col = document.querySelector(`col-12`)
+    let card = document.createElement(`div`)
+    card.classList.add(`card`)
+    col.appendChild(card)
+}
+
+function createString(employer){
+    let col = document.getElementById(`test`)
+    let text = document.createElement(`p`)
+    text.innerHTML = `${employer}`
+    col.appendChild(text)
+}
+
 // DICHIARO UN ARRAY DI OGGETTI CON I DATI DEGLI IMPIEGATI
 
 let employees = [
@@ -32,7 +46,7 @@ let employees = [
         photo: "barbara-ramos-graphic-designer.jpg"
     }
 ]
-
+console.log(employees)
 for(let i=0; i<employees.length; i++){
-    console.log(employees[i])
+    createString(employees[i])
 }
