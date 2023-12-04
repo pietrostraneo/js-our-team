@@ -1,9 +1,13 @@
+// GENERO UNA FUNZIONE CHE MI CREA UNA CARD, DA USARE IN UN CICLO PER STAMPARE I DATI DEI DIPENDENTI
+
 function createCard(){
     let col = document.querySelector(`col-12`)
     let card = document.createElement(`div`)
     card.classList.add(`card`)
     col.appendChild(card)
 }
+
+// GENERO UNA FUNZIONE CHE MI CREA UNA STRINGA, DA USARE IN UN CICLO PER STAMPARE I DATI DEI DIPENDENTI
 
 function createString(employer){
     let col = document.getElementById(`test`)
@@ -46,7 +50,10 @@ let employees = [
         photo: "barbara-ramos-graphic-designer.jpg"
     }
 ]
+
 console.log(employees)
+
+// CICLO CHE STAMPA SU STRINGA I DATI DEI DIPENDENTI
 for(let i=0; i<employees.length; i++){
     createString(employees[i])
 }
