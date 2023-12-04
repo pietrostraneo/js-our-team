@@ -1,17 +1,27 @@
 // GENERO UNA FUNZIONE CHE MI CREA UNA CARD, DA USARE IN UN CICLO PER STAMPARE I DATI DEI DIPENDENTI
 
 function createCard(photo, name, role){
+
+    // CREO IL CONTENITORE "CARD"
     let col = document.getElementById(`test`)
     let card = document.createElement(`div`)
     card.classList.add(`card`)
+    card.classList.add(`text-center`)
+    card.style.width = `270px`
     col.appendChild(card)
+
+    // AGGIUNGO L'IMMAGINE ALLA CARD
     let img = document.createElement(`img`)
     img.src = `../img/${photo}`
     img.classList.add(`card-img-top`)
     card.appendChild(img)
+
+    // CREO IL CONTENITORE DELLA CARD CHE CONTERRA' IL TESTO
     let card_body = document.createElement(`div`)
     card_body.classList.add(`card-body`)
     card.appendChild(card_body)
+
+    // CREO GLI ELEMENTI DI TESTO CHE CONTERRANNO I DATI DELL'ARRAY
     let nome = document.createElement(`h5`)
     let ruolo = document.createElement(`p`)
     nome.classList.add(`card-title`)
@@ -20,6 +30,7 @@ function createCard(photo, name, role){
     ruolo.innerHTML = `${role}`
     card_body.appendChild(nome)
     card_body.appendChild(ruolo)
+
 }
 
 // GENERO UNA FUNZIONE CHE MI CREA UNA STRINGA, DA USARE IN UN CICLO PER STAMPARE I DATI DEI DIPENDENTI
