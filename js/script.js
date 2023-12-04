@@ -33,4 +33,6 @@ let employees = [
     }
 ]
 
-console.log(employees)
+for(let i=0; i<employees.length; i++){
+    console.log(employees[i])
+}
